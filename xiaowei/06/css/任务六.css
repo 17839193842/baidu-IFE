@@ -1,0 +1,549 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+	background: #000;
+}
+
+
+/*公共样式*/
+
+.clear:after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+}
+
+.fr {
+	float: right;
+}
+
+.fl {
+	float: left;
+}
+
+
+/*部分公共样式*/
+
+.text p.text2,
+.text p.text4,
+.text p.text1,
+.text5,
+.fl h2,
+.fl2 p,
+.fl3 p span,
+#bottom:first-letter,
+.fl3 p,
+#document .fl,
+.top .shadow a,
+.top .shadow em {
+	font-family: "微软雅黑";
+}
+
+.header,
+#top i,
+#top p,
+#img .fr,
+#img .fr span,
+#document .fr ul li,
+.footer a {
+	font-family: "黑体";
+}
+
+.fl1 p,
+.content3 .bottom p span,
+#bottom,
+.content3 .bottom p {
+	font-family: "宋体";
+}
+
+.header,
+.content,
+.footer {
+	width: 892px;
+	margin: 0 auto;
+}
+
+#wrap {
+	width: 980px;
+	height: 1386px;
+	margin: 0 auto;
+	background: #fff;
+}
+
+
+/*头部样式开始*/
+
+.header {
+	height: 61px;
+	border-bottom: 2px solid #938e8c;
+}
+
+.header .fl {
+	position: relative;
+}
+
+.header .fl a {
+	position: absolute;
+	bottom: 5px;
+	left: 10px;
+	color: #ffffff;
+	font-size: 12px;
+}
+
+.header .fr {
+	font-size: 12px;
+	color: #d45d5c;
+	text-decoration: none;
+	display: block;
+	margin-top: 45px;
+}
+
+.content {
+	height: 1265px;
+}
+
+
+/*头部样式结束*/
+
+
+/*第一部分内容样式开始*/
+
+.content1 {
+	width: 892px;
+	height: 301px;
+	margin: 35px auto;
+}
+
+.bg {
+	position: relative;
+	width: 641px;
+	height: 301px;
+}
+
+.bg .green,
+.bg .red {
+	position: absolute;
+	width: 191px;
+	height: 301px;
+	opacity: 0.5;
+}
+
+.bg .green {
+	left: 0px;
+	top: 0px;
+	background: #395643;
+}
+
+.bg .red {
+	right: 0px;
+	top: 0px;
+	background: #ba7d79;
+}
+
+.text {
+	width: 203px;
+	height: 301px;
+	border-top: 2px solid #cc8091;
+}
+
+.text p.text1 {
+	font-size: 24px;
+	color: #000;
+	line-height: 40px;
+}
+
+.text p.text2 {
+	font-size: 24px;
+	color: #000;
+	line-height: 40px;
+}
+
+.text p.text3 {
+	line-height: 10px;
+	font-size: 12px;
+	font-family: "楷体";
+	color: #676767;
+}
+
+.text p.text4 {
+	font-size: 102px;
+	color: #75b86b;
+}
+
+.text5 {
+	width: 203px;
+	color: #cc8091;
+}
+
+.text5 span {
+	font-size: 55px;
+}
+
+.text5 ul {
+	margin-top: 17px;
+	margin-left: 5px;
+}
+
+.text5 ul li {
+	list-style: none;
+}
+
+.text5 ul li.top {
+	font-size: 21px;
+}
+
+.text5 ul li.bottom {
+	font-size: 12px;
+}
+
+
+/*第一部分内容样式结束*/
+
+
+/*第二部分内容样式开始*/
+
+.content2 .c_content2 {
+	width: 641px;
+	height: 180px;
+	margin: 35px 0 0;
+}
+
+.c_content2 div {
+	height: 100%;
+}
+
+.fl1 {
+	width: 228px;
+	margin-right: 30px;
+}
+
+.fl2 {
+	width: 203px;
+	margin-right: 30px;
+}
+
+.fl3 {
+	width: 150px;
+}
+
+.fl h2 {
+	font-size: 16px;
+}
+
+.fl1 h2 {
+	color: #418c59;
+}
+
+.fl2 h2 {
+	color: #d29947;
+}
+
+.fl3 h2 {
+	color: #cc7680;
+}
+
+.fl p {
+	font-size: 12px;
+	line-height: 16px;
+	padding-top: 10px;
+}
+
+.fl1 p {
+	color: #767777;
+}
+
+.fl2 p {
+	color: #231815;
+	opacity: 70%;
+}
+
+.fl3 p {
+	color: #cd4a48;
+}
+
+.fl3 p.line {
+	line-height: 16px;
+	color: #000;
+}
+
+.fl3 p span {
+	opacity: 70%;
+	font-size: 12px;
+	color: #cd4a48;
+}
+
+
+/*第二部分内容样式结束*/
+
+
+/*第三部分内容样式开始*/
+
+.content3 {
+	margin-top: 70px;
+}
+
+
+/*左边部分样式*/
+
+.content3 .fl {
+	width: 415px;
+}
+
+.fl #top {
+	width: 415px;
+	height: 150px;
+	border-bottom: 2px solid #11456b;
+}
+
+#top i {
+	font-size: 72px;
+	color: #f5e327;
+	font-weight: 600;
+}
+
+#top a {
+	margin-left: 10px;
+	text-decoration: none;
+	font-size: 42px;
+	color: #11456b;
+	line-height: 16px;
+	font-weight: 500;
+}
+
+#top p {
+	font-size: 33px;
+	color: #11456b;
+	font-weight: 500;
+	padding: 10px 0;
+}
+
+#bottom {
+	padding: 20px 0;
+	font-size: 12px;
+	color: #767777;
+	line-height: 16px;
+}
+
+#bottom:first-letter {
+	font-size: 70px;
+	line-height: 70px;
+	float: left;
+	color: #F5E327;
+}
+
+#bottom img {
+	float: right;
+	margin: 15px 0px 15px 15px;
+}
+
+
+/*第三部分内容样式开始结束*/
+
+
+/*右边部分样式*/
+
+.content3 .fr {
+	width: 458px;
+}
+
+
+/*右边部分（上部）样式开始*/
+
+.top .shadow {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 458px;
+	height: 61px;
+	background: #757064;
+	opacity: 0.5;
+}
+
+.top .shadow span {
+	position: absolute;
+	display: inline-block;
+	width: 3px;
+	height: 44px;
+	background: #72b16a;
+	left: 40px;
+	top: 8px;
+}
+
+.top .shadow a {
+	position: absolute;
+	left: 52px;
+	top: 15px;
+	display: block;
+	font-size: 26px;
+	color: #fff;
+}
+
+.top .shadow em {
+	position: absolute;
+	left: 165px;
+	top: 30px;
+	color: #72B16A;
+	line-height: 140%;
+}
+
+
+/*右边部分（上部）样式结束*/
+
+
+/*右边部分（下部）样式开始*/
+
+.content3 .fr .bottom {
+	width: 459px;
+	height: 298px;
+	background: #eeedd6;
+	margin-top: 40px;
+	padding-top: 20px;
+}
+
+.content3 .fr .bottom p {
+	line-height: 20px;
+	font-size: 16px;
+	color: #5a5b5b;
+	margin: 20px;
+	position: relative;
+	padding-left: 20px;
+}
+
+.content3 .bottom p i {
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 5px solid darkblue;
+	font-style: normal;
+	position: absolute;
+	left: 0px;
+	top: 8px;
+}
+
+.content3 .bottom p span {
+	float: right;
+	font-size: 12px;
+	color: #5a5b5b;
+	text-align: right;
+	line-height: 20px;
+}
+
+.fr .top {
+	position: relative;
+}
+
+#img {
+	width: 459px;
+	height: 160px;
+	margin-bottom: 0px;
+}
+
+#img .fl {
+	width: 260px;
+	position: relative;
+}
+
+#img .fr {
+	width: 184px;
+	font-size: 14px;
+	color: #5a5b5b;
+	line-height: 16px;
+	height:100%;
+}
+
+#img .quot em:before{
+	content:"“";
+	line-height:72px;
+	position:relative;
+	top:36px;
+	left:-10px;
+	font-size:72px;
+	color:#d45d5c;
+}
+#img .quot em:after{
+	content:"”";
+	line-height:72px;
+	position:relative;
+	font-size:72px;
+	color:#d45d5c;
+	float:right;
+}
+
+
+
+#document {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 260px;
+	height: 160px;
+	color: #fff;
+}
+
+#document .fl {
+	width: 85px;
+	height: 160px;
+}
+
+#document .fr {
+	width: 175px;
+	height: 160px;
+}
+
+#document .fl {
+	font-size: 110px;
+	color: #fff;
+}
+
+#document .fl span {
+	display: inline-block;
+	width: 2px;
+	height: 86px;
+	background: #fff;
+	margin-left: 6px;
+}
+
+#document .fr ul {
+	margin-top: 30px;
+}
+
+#document .fr ul li {
+	color: #fff;
+	line-height: 24px;
+	font-size: 21px;
+	list-style: none;
+	margin-top: 6px;
+}
+
+#document .fr ul li.hello {
+	font-size: 12px;
+	line-height: 10px;
+}
+
+
+/*右边部分（下部）样式结束*/
+
+
+/*第三部分内容样式结束*/
+
+
+/*底部样式开始*/
+
+.footer {
+	width: 892px;
+	height: 60px;
+	border-top: 1px solid #938e8c;
+}
+
+.footer a {
+	text-decoration: none;
+	margin-top: 2px;
+	display: block;
+	color: #d45d5c;
+}
+
+
+/*底部样式结束*/
