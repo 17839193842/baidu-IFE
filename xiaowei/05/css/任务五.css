@@ -1,0 +1,249 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	font-family: "微软雅黑";
+	background: #333;
+}
+
+
+/*头部样式*/
+
+.title {
+	width: 100%;
+	height: 65px;
+	background: #333;
+}
+
+.title:after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+}
+
+.title img {
+	float: left;
+	margin-left: 100px;
+	margin-top: -10px;
+}
+
+.title ul {
+	float: right;
+	margin-right: 100px;
+}
+
+.title ul li {
+	float: left;
+	font-size: 14px;
+	margin-right: 15px;
+	line-height: 65px;
+	list-style: none;
+}
+
+.title ul li a {
+	display: block;
+	color: #fff;
+	text-decoration: none;
+}
+
+.title ul li a.active {
+	color: #999999;
+}
+
+#wrap {
+	width: 90%;
+	height: 100%;
+	margin: 0 auto;
+	background: #ccc;
+	padding: 20px;
+	overflow: hidden;
+}
+
+
+/*内容部分样式*/
+
+.content {
+	padding: 20px;
+	border: 1px solid #ddd;
+	border-bottom: 3px solid #999;
+	border-right: 3px solid #999;
+	margin-bottom: 20px;
+	background: #fff;
+}
+
+.content h1 {
+	font-size: 24px;
+	font-weight: 600;
+	padding: 5px 0px;
+}
+
+.content h2 {
+	font-size: 20px;
+	font-weight: 500;
+	padding: 5px 0;
+}
+
+.content .author {
+	font-size: 14px;
+	padding: 5px 0;
+}
+
+.content p {
+	line-height: 25px;
+}
+
+.content .p1 {
+	text-indent: 20px;
+}
+
+.content ul {
+	margin-left: 30px;
+}
+
+.content ul li {
+	list-style: none;
+}
+
+.content h3 {
+	padding: 20px;
+}
+
+.content p.img {
+	border: 1px solid #999;
+	padding: 15px;
+	text-align: center;
+	display: inline-block;
+	margin: 20px;
+}
+
+.content p.img img {
+	margin-top: 10px;
+	margin-right: 10px;
+}
+
+.content ol {
+	margin-left: 30px;
+	font-size: 16px;
+}
+
+.content ol li {
+	margin-top: 8px;
+}
+
+.content table {
+	width: 98%;
+	font-size: 14px;
+	text-align: left;
+	border: 0.3px solid #ddd;
+}
+
+.content table tr {
+	line-height: 30px;
+}
+
+.content table tr:nth-child(6) {
+	background: #ddd;
+}
+
+.content table th {
+	background: #000;
+	color: #fff;
+}
+
+.content p.tab {
+	font-size: 16px;
+}
+
+
+/*侧栏样式*/
+
+aside h1.size {
+	font-size: 20px;
+	font-weight: 600;
+}
+
+aside form {
+	width: 360px;
+	font-size: 14px;
+}
+
+aside form p {
+	margin: 10px auto;
+}
+
+aside form p:after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+}
+
+aside .text {
+	float: left;
+	width: 120px;
+	line-height: 25px;
+	text-align: right;
+	margin-right: 10px;
+}
+
+aside .right {
+	float: left;
+	width: 220px;
+}
+
+.right input[type="text"],
+.right input[type="password"] {
+	width: 130px;
+	height: 25px;
+	line-height: 25px;
+}
+
+aside .txt {
+	margin-left: 150px;
+	color: #ccc;
+	font-size: 12px;
+}
+
+aside p input[type="submit"] {
+	width: 320px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: #fff;
+	background: #0000FF;
+	font-size: 20px;
+	font-weight: 500;
+	border-radius: 12px;
+	outline: 0;
+	margin: 10px auto;
+}
+
+.right textarea {
+	width: 180px;
+	height: 60px;
+}
+
+.fr {
+	float: right;
+	width: 360px;
+}
+
+.main {
+	margin-right: 380px;
+}
+
+
+/*底部样式*/
+
+.copy {
+	width: 100%;
+	height: 65px;
+	background: #333;
+	color: #fff;
+	line-height: 65px;
+	text-align: center;
+	margin-top: 20px;
+}
