@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				padding: 0px;
+				margin: 0px;
+			}
+			
+			body {
+				position: relative;
+			}
+			
+			#box {
+				width: 400px;
+				height: 200px;
+				background: #ccc;
+				margin: 100px auto;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.leftTop,
+			.rightBottom {
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				background: #fc0;
+				border-radius: 50%;
+			}
+			
+			.leftTop {
+				left: -50px;
+				top: -50px;
+			}
+			
+			.rightBottom {
+				right: -50px;
+				bottom: -50px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box">
+			<div class="leftTop"></div>
+			<div class="rightBottom"></div>
+		</div>
+	</body>
+
+</html>
