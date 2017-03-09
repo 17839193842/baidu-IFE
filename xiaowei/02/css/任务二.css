@@ -21,9 +21,9 @@ form {
 #wrap {
 	width: 95%;
 	margin:0 auto;
-	background: #CCCCCC
+	background: #CCCCCC;
 }
-
+body{background:#000;}
 
 /*头部样式*/
 
