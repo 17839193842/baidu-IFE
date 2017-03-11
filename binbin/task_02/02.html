@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>IFE JavaScript Task 02</title>
+		<style>
+			*{padding:0px;margin:0px;}
+			body{padding:20px;}
+			h3{color:red;margin:10px;}
+			ul{margin:10px;}
+			ul li{list-style:none;margin:5px 0;}
+			
+		</style>
+	</head>
+	<body>
+		<h3>污染城市列表</h3>
+		<ul id="api-list">
+			
+		</ul>
+		<script type="text/javascript">
+			var apiData=[
+			["北京",90],
+			["上海",50],
+			["福州",10],
+			["广州",50],
+			["成都",90],
+			["西安",100]
+			];
+			var oUl=document.getElementById("api-list");
+			var apiData1=[];
+			(function(){
+				for(var i=0;i<apiData.length;i++){
+					if(apiData[i][1]>60){
+						apiData1.push(apiData[i]);
+					}
+				}
+				for(var j=0;j<apiData1.length-1;j++){
+					for(k=j+1;k<apiData1.length;k++){
+						if(apiData1[j]<apiData1[k]){
+							var t=apiData1[j];
+							apiData1[j]=apiData1[k];
+							apiData1[k]=t;
+						}
+					}
+					var list="";
+					for(var m=0;m<apiData1.length;m++){
+						
+						list+='<li>'+'第'+parseInt(m+1)+'名:'+apiData1[m]+'</li>';
+				      }
+					oUl.innerHTML=list;
+				}
+			})();
+		</script>
+	</body>
+</html>
