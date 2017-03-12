@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>baidu-IFE-小微学院-任务十</title>
+		<style>
+			*{padding:0px;margin:0px;}
+			#flex-container{border:1px solid #999;
+			 align-items: flex-start;
+			 flex-wrap: wrap;
+			 display:flex;
+			 justify-content: space-between;
+			 align-items: center;
+			 padding:20px;
+			 }
+			 .flex-item1{width:150px;border:1px solid #f00;
+			 align-content: space-between;margin:20px;
+			 padding:20px;}
+			 .one{height:120px;}
+			 .two{height:100px;}
+			 .three{height:40px;}
+			 .four{
+			 	border:1px solid #0f0;
+			 	height:200px;
+			 }
+			 @media only screen and (max-width:640px ) {
+			 	.four{
+			 		order:-1;
+			 	}
+			 	#flex-container{
+			 		align-items: flex-start;
+			 	}
+			 }
+		</style>
+	</head>
+	<body>
+		<div id="flex-container">
+			<div class="one flex-item1"></div>
+			<div class="two flex-item1"></div>
+			<div class="three flex-item1"></div>
+			<div class="four flex-item1"></div>
+		</div>
+	</body>
+</html>
