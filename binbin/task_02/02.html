@@ -36,10 +36,10 @@
 				}
 				for(var j=0;j<apiData1.length-1;j++){
 					for(k=j+1;k<apiData1.length;k++){
-						if(apiData1[j]<apiData1[k]){
-							var t=apiData1[j];
-							apiData1[j]=apiData1[k];
-							apiData1[k]=t;
+						if(apiData1[j][1]<apiData1[k][1]){
+							var t=apiData1[j][1];
+							apiData1[j][1]=apiData1[k][1];
+							apiData1[k][1]=t;
 						}
 					}
 					var list="";
