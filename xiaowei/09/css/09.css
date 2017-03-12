@@ -66,6 +66,8 @@ body {
 	background: #228ac0;
 }
 
+#nav .clearfix{width:1280px;height:56px;}
+
 #nav .fl {
 	width: 38px;
 	height: 38px;
@@ -89,8 +91,8 @@ body {
 #nav .fr {
 	width: 420px;
 	height: 30px;
-	margin: 13px 100px;
-	position: relative;
+	margin:13px;
+	position:relative;
 }
 
 #nav .fr input {
