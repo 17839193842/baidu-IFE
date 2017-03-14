@@ -49,7 +49,7 @@ img{
       	position:absolute;
       	transform:rotate(45deg);
       	left:-12px;
-      	top:8px;
+      	top:6px;
       }
  /*
        导航部分样式*/
@@ -126,7 +126,7 @@ img{
 			color:#999;}
 			.case{flex-direction: column;}
 			.p{
-				margin-top:68%;
+				margin-top:50%;
 			}
 			/*模块一*/
 			.mod1{
