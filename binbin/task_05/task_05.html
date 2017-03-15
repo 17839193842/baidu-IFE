@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>任务五：基础JavaScript练习（二）</title>
+		<style type="text/css">
+			* {
+				padding: 0px;
+				margin: 0px;
+			}
+			
+			body {
+				background: #000;
+			}
+			
+			.wrap {
+				margin: 50px auto;
+				width: 1200px;
+			}
+			
+			#ul {
+				margin-top: 10px;
+				height: 122px;
+				width: 0px;
+				background: #fff;
+				vertical-align: bottom;
+			}
+			
+			#ul li {
+				list-style: none;
+				float: left;
+				margin-bottom: 10px;
+				margin: 0px 3px;
+				width: 24px;
+				background: red;
+				text-align: center;
+				color: #fff;
+				font-size: 8px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrap">
+			<form action="">
+				<input type="text" value="" id="text">
+				<input type="button" value="左侧入" id="left_come">
+				<input type="button" value="右侧入" id="right_come">
+				<input type="button" value="左侧出" id="left_out">
+				<input type="button" value="右侧出" id="right_out">
+				<input type="button" value="排序" id="btn">
+			</form>
+			<ul id="ul">
+			</ul>
+
+		</div>
+		<script>
+			window.onload = function() {
+				/*定义变量*/
+				var oText = document.getElementById("text");
+				var left_come = document.getElementById("left_come");
+				var right_come = document.getElementById("right_come");
+				var left_out = document.getElementById("left_out");
+				var right_out = document.getElementById("right_out");
+				var oUl = document.getElementById("ul");
+				var aLi = oUl.getElementsByTagName("li");
+				var btn = document.getElementById("btn");
+
+				/*左侧进功能实现*/
+
+				left_come.onclick = function() {
+					if(oText.value >= 10 && oText.value <= 100 && oUl.children.length <= 60) {
+						var li = document.createElement("li");
+						li.innerHTML = oText.value;
+						li.style.height = oText.value + 'px';
+						li.style.marginTop = (115 - oText.value) + 'px';
+						oUl.insertBefore(li, oUl.children[0]);
+						oUl.style.width = oUl.children.length * 30 + 'px';
+						del();
+						sort1();
+					} else {
+						if(oUl.children.length > 60) {
+							alert("您输入的数量过多");
+						}
+					}
+				}
+
+				/*右侧进功能实现*/
+
+				right_come.onclick = function() {
+						if(oText.value >= 10 && oText.value <= 100 && oUl.children.length <= 60) {
+							var li = document.createElement("li");
+							li.innerHTML = oText.value;
+							li.style.height = oText.value + 'px';
+							li.style.marginTop = (115 - oText.value) + 'px';
+							oUl.appendChild(li);
+							oUl.style.width = oUl.children.length * 30 + 'px';
+							del();
+							sort1();
+						} else {
+							if(oUl.children.length > 60) {
+								alert("您输入的数量过多");
+							}
+						}
+					}
+					/*左侧出功能实现*/
+				left_out.onclick = function() {
+						alert(oUl.children[0].innerHTML);
+						oUl.removeChild(oUl.children[0]);
+						oUl.style.width = oUl.children.length * 30 + 'px';
+						del();
+						sort1();
+					}
+					/*右侧出功能实现*/
+				right_out.onclick = function() {
+					alert(oUl.children[oUl.children.length - 1].innerHTML);
+					oUl.removeChild(oUl.children[oUl.children.length - 1]);
+					oUl.style.width = oUl.children.length * 30 + 'px';
+					del();
+					sort1();
+				}
+
+				/*删除自身元素实现*/
+				function del() {
+					for(var i = 0; i < oUl.children.length; i++) {
+						oUl.children[i].onclick = function() {
+							oUl.removeChild(this);
+							oUl.style.width = oUl.children.length * 30 + 'px';
+
+						}
+					}
+				}
+
+				/*利用冒泡排序实现所有数从小到大的排序*/
+				function sort1() {
+					btn.onclick = function() {
+						for(var j = 0; j < oUl.children.length - 1; j++) {
+							for(var k = 0; k < oUl.children.length - j - 1; k++) {
+								if(oUl.children[k].innerHTML > oUl.children[k + 1].innerHTML) {
+									var m = oUl.children[k].style.height;
+									oUl.children[k].style.height = oUl.children[k + 1].style.height;
+									oUl.children[k + 1].style.height = m;
+
+									var p = oUl.children[k].innerHTML;
+									oUl.children[k].innerHTML = oUl.children[k + 1].innerHTML;
+									oUl.children[k + 1].innerHTML = p;
+
+									var q = oUl.children[k].style.marginTop;
+									oUl.children[k].style.marginTop = oUl.children[k + 1].style.marginTop;
+									oUl.children[k + 1].style.marginTop = q;
+								}
+							}
+						}
+					}
+				}
+			}
+		</script>
+	</body>
+
+</html>
