@@ -1,18 +1,40 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title>任务四：基础JavaScript练习（一）</title>
 		<style type="text/css">
-			*{padding:0px;
-			margin:0px;}
-			.wrap{width:500px;height:500px;margin:50px auto;}
-			#ul{margin-top:10px;}
-			#ul li{list-style:none;float:left;margin:5px;
-			width:40px;height:40px;background:red;
-			  line-height:40px;text-align:center;color:#fff;font-size:18px;}
+			* {
+				padding: 0px;
+				margin: 0px;
+			}
+			
+			.wrap {
+				width: 500px;
+				height: 500px;
+				margin: 50px auto;
+			}
+			
+			#ul {
+				margin-top: 10px;
+			}
+			
+			#ul li {
+				list-style: none;
+				float: left;
+				margin: 5px;
+				width: 40px;
+				height: 40px;
+				background: red;
+				line-height: 40px;
+				text-align: center;
+				color: #fff;
+				font-size: 18px;
+			}
 		</style>
 	</head>
+
 	<body>
 		<div class="wrap">
 			<form action="">
@@ -21,10 +43,11 @@
 				<input type="button" value="右侧入" id="right_come">
 				<input type="button" value="左侧出" id="left_out">
 				<input type="button" value="右侧出" id="right_out">
-				
+
 			</form>
 			<ul id="ul">
-				<li>10</li>
+				
+                <li>10</li>
 				<li>3</li>
 				<li>7</li>
 				<li>12</li>
@@ -33,40 +56,58 @@
 			</ul>
 		</div>
 		<script>
-		   window.onload=function(){
-		   	var oText=document.getElementById("text");
-		   	var left_come=document.getElementById("left_come");
-		   	var right_come=document.getElementById("right_come");
-		   	var left_out=document.getElementById("left_out");
-		   	var right_out=document.getElementById("right_out");
-		   	var oUl=document.getElementById("ul");
-		   	var aLi=oUl.getElementsByTagName("li");
-		  
-		   	left_come.onclick=function(){
-		   		var li=document.createElement("li");
-		   		li.innerHTML=oText.value;
-		   		oUl.insertBefore(li,oUl.children[0]);
-		   	}
-		   		right_come.onclick=function(){
-		   		var li=document.createElement("li");
-		   		li.innerHTML=oText.value;
-		   		oUl.appendChild(li);
-		   	}
-		   		left_out.onclick=function(){
-		   		alert(oUl.children[0].innerHTML);
-		   		oUl.removeChild(oUl.children[0]);
-		   		
-		   	}
-		   		right_out.onclick=function(){
-		   		alert(oUl.children[oUl.children.length-1].innerHTML);
-		   		oUl.removeChild(oUl.children[oUl.children.length-1]);
-		   	}
-		   		for(var i=0;i<aLi.length;i++){
-		   			aLi[i].onclick=function(){
-		   				oUl.removeChild(this);
-		   			}
-		   		}
-		   }
+			window.onload = function() {
+				var oText = document.getElementById("text");
+				var left_come = document.getElementById("left_come");
+				var right_come = document.getElementById("right_come");
+				var left_out = document.getElementById("left_out");
+				var right_out = document.getElementById("right_out");
+				var oUl = document.getElementById("ul");
+				var aLi = oUl.getElementsByTagName("li");
+
+				left_come.onclick = function() {
+					var li = document.createElement("li");
+					li.innerHTML = oText.value;
+					oUl.insertBefore(li, oUl.children[0]);
+					for(var i = 0; i < oUl.children.length; i++) {
+						oUl.children[i].onclick = function() {
+							alert(i);
+							oUl.removeChild(this);
+						}
+					}
+				}
+				right_come.onclick = function() {
+					var li = document.createElement("li");
+					li.innerHTML = oText.value;
+					oUl.appendChild(li);
+					for(var i = 0; i < oUl.children.length; i++) {
+						oUl.children[i].onclick = function() {
+							oUl.removeChild(this);
+						}
+					}
+				}
+				left_out.onclick = function() {
+					alert(oUl.children[0].innerHTML);
+					oUl.removeChild(oUl.children[0]);
+					for(var i = 0; i < oUl.children.length; i++) {
+						oUl.children[i].onclick = function() {
+							oUl.removeChild(this);
+						}
+					}
+
+				}
+				right_out.onclick = function() {
+					alert(oUl.children[oUl.children.length - 1].innerHTML);
+					oUl.removeChild(oUl.children[oUl.children.length - 1]);
+					for(var i = 0; i < oUl.children.length; i++) {
+						oUl.children[i].onclick = function() {
+							oUl.removeChild(this);
+						}
+					}
+				}
+
+			}
 		</script>
 	</body>
+
 </html>
