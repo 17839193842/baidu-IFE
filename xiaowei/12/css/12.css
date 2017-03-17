@@ -1,7 +1,7 @@
 *{padding:0px;margin:0px;}
 			.wrap{width:400px;margin:30px auto;}
 			.box{width:100%;height:100%;margin:0 auto;}
-			.clearfix{content:" ";display:table;clear:both;}
+			.clearfix:after{content:" ";display:table;clear:both;}
 			.fl{float:left;}]
 			.box .line{margin:0 auto;}
 			.box .line span{margin-left:2px;padding-left:5px;width:60px;
