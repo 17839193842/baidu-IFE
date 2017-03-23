@@ -1,63 +1,143 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>耀耀学院 任务一：表单（一）单个表单项的检验</title>
 		<style type="text/css">
-			*{padding:0px;margin:0px;}
-			.wrap{width:1000px;height:900px;margin:20px auto;}
-			.line{width:1000px;height:120px;margin:30px 0;}
-			.text{width:1000px;height:80px;}
-			.text:after{content:"";display:table;clear:both;}
-			.text label{width:160px;height:70px;line-height:70px;font-size:24px;text-align: center;
-			font-weight:bold;line-height:70px;display:inline-block;margin-top:0px;float:left;}
-			.text input[type="text"]{
-				width:600px;height:70px;border:2px solid #dedede;border-radius:5px;
-				outline:none;margin:0 30px;margin-top:0px;display:inline-block;float:left;
-				font-size:20px;color:#222;text-indent:10px;
+			* {
+				padding: 0px;
+				margin: 0px;
 			}
-			.text button{width:160px;height:70px;border-radius:8px;background:cornflowerblue;font-size:20px;
-			color:#fff;text-align:center;line-height:70px;margin-top:0px;display:inline-block;float:left;}
-			.tell{height:40px;line-height:40px;font-size:20px;
-			color:#aaa;width:810px;padding-left:190px;}
-			#red{border-color:red;color:red;}
-			#green{border-color:green;color:green;}
+			
+			.wrap {
+				width: 1000px;
+				height: 900px;
+				margin: 20px auto;
+			}
+			
+			.line {
+				width: 1000px;
+				height: 120px;
+				margin: 30px 0;
+			}
+			
+			.text {
+				width: 1000px;
+				height: 80px;
+			}
+			
+			.text:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+			
+			.text label {
+				width: 160px;
+				height: 70px;
+				line-height: 70px;
+				font-size: 24px;
+				text-align: center;
+				font-weight: bold;
+				line-height: 70px;
+				display: inline-block;
+				margin-top: 0px;
+				float: left;
+			}
+			
+			.text input[type="text"] {
+				width: 600px;
+				height: 70px;
+				border: 2px solid #dedede;
+				border-radius: 5px;
+				outline: none;
+				margin: 0 30px;
+				margin-top: 0px;
+				display: inline-block;
+				float: left;
+				font-size: 20px;
+				color: #222;
+				text-indent: 10px;
+			}
+			
+			.text button {
+				width: 160px;
+				height: 70px;
+				border-radius: 8px;
+				background: cornflowerblue;
+				font-size: 20px;
+				color: #fff;
+				text-align: center;
+				line-height: 70px;
+				margin-top: 0px;
+				display: inline-block;
+				float: left;
+			}
+			
+			#content {
+				height: 40px;
+				line-height: 40px;
+				font-size: 20px;
+				color: red;
+				width: 810px;
+				padding-left: 190px;
+			}
 		</style>
 	</head>
+
 	<body>
-		<div class="wrap">
-			<form action="">
-			<div class="line">	
+
+		<form action="" class="wrap">
+			<div class="line">
 				<div class="text">
-				<label>名称</label>
-				<input type="text" >
-				<button>验证</button>
+					<label>名称</label>
+					<input type="text" id="input">
+					<button id="btn" type="button">验证</button>
 				</div>
-				<div class="tell">
-					必填,长度为4~16个字符
-				</div>
+				<p id="content">
+
+				</p>
 			</div>
-			<div class="line">	
-				<div class="text">
-				<label>名称</label>
-				<input type="text" id="red" >
-				<button>验证</button>
-				</div>
-				<div class="tell" id="red">
-					姓名不能为空
-				</div>
-			</div>
-			<div class="line">	
-				<div class="text" >
-				<label>名称</label>
-				<input type="text" id="green" placeholder="百度IFI">
-				<button>验证</button>
-				</div>
-				<div class="tell" id="green">
-					名称格式正确
-				</div>
-			</div>
-			</form>
-		</div>
+		</form>
+
+		<script>
+			window.onload = function() {
+				var btn = document.getElementById("btn");
+				var inputText = document.getElementById("input");
+				var content = document.getElementById("content");
+
+				btn.onclick = function() {
+					leng();
+				}
+
+				function leng() {
+					var Text = inputText.value;
+					var len = 0;
+					for(var i = 0; i < Text.length; i++) {
+						if(Text.charCodeAt(i) <= 0xFF && Text.charCodeAt(i) >= 0x00) {
+							len++;
+						} else {
+							len += 2;
+						}
+					}
+					if(!Text) {
+						content.innerHTML = '姓名不能为空';
+						content.style.color = "#FF0000";
+						inputText.style.borderColor = "#FF0000";
+					} else if(len < 4 || len > 16) {
+						content.innerHTML = '必填,长度为4~16个字符'
+						content.style.color = "#dedede";
+						inputText.style.borderColor = "#dedede";
+					} else {
+						content.innerHTML = '输入格式正确';
+						content.style.color = "green";
+						inputText.style.borderColor = "green";
+					}
+				}
+
+			}
+		</script>
 	</body>
+
 </html>
