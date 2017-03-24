@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>耀耀学院 任务一：表单（一）单个表单项的检验</title>
+		<title>耀耀学院 任务二：表单（二）多个表单项的动态校验</title>
 		<style type="text/css">
 			* {
 				padding: 0px;
@@ -127,6 +127,7 @@
 	var inputText=oBox.getElementsByTagName("input");
 	var oP=oBox.getElementsByTagName("p");
 	var btn=document.getElementById("btn");
+	var a,b,c,d,e;
 	var arr0=['必填,长度为4~16个字符',
 	'密码为4~16个字符',
 	'请保证两次输入密码一致',
@@ -176,14 +177,17 @@
 						oP[this.index].innerHTML=arr1[this.index];
 						inputText[this.index].style.borderColor="red";
 						oP[this.index].style.color="red";
+						a=0;
 					}
 					else if(len < 4 || len> 16) {
 						oP[this.index].innerHTML=arr2[this.index];
+						a=0;
 					}
 					else {
 						oP[this.index].innerHTML=arr3[this.index];
 						inputText[this.index].style.borderColor="lightgreen";
 						oP[this.index].style.color="lightgreen";
+						a=1;
 					}
 				}
 				else if(this.index==1) {
@@ -201,14 +205,17 @@
 						oP[this.index].innerHTML=arr1[this.index];
 						inputText[this.index].style.borderColor="red";
 						oP[this.index].style.color="red";
+						b=0;
 					}
 					else if(len < 4 || len> 16) {
 						oP[this.index].innerHTML=arr2[this.index];
+						b=0;
 					}
 					else {
 						oP[this.index].innerHTML=arr3[this.index];
 						inputText[this.index].style.borderColor="lightgreen";
 						oP[this.index].style.color="lightgreen";
+						b=1;
 					}
 				}
 				else if(this.index==2) {
@@ -216,12 +223,14 @@
 						oP[this.index].innerHTML=arr1[this.index];
 						inputText[this.index].style.borderColor="red";
 						oP[this.index].style.color="red";
+						c=0;
 					}
 					else {
 						if(inputText[this.index].value===inputText[1].value) {
 							oP[this.index].innerHTML=arr3[this.index];
 							inputText[this.index].style.borderColor="lightgreen";
 							oP[this.index].style.color="lightgreen";
+							c=1;
 						}
 					}
 				}
@@ -230,6 +239,7 @@
 						oP[this.index].innerHTML=arr1[this.index];
 						inputText[this.index].style.borderColor="red";
 						oP[this.index].style.color="red";
+						d=0;
 					}
 					else {
 						var reg=new RegExp('^[0-9a-zA-Z_]+@[0-9a-zA-Z_]{1,}[.]{1}(com|cn|org)$');
@@ -237,11 +247,13 @@
 							oP[this.index].innerHTML=arr2[this.index];
 							inputText[this.index].style.borderColor="red";
 							oP[this.index].style.color="red";
+							d=0;
 						}
 						else {
 							oP[this.index].innerHTML=arr3[this.index];
 							inputText[this.index].style.borderColor="lightgreen";
 							oP[this.index].style.color="lightgreen";
+							d=1;
 						}
 					}
 				}
@@ -250,6 +262,7 @@
 						oP[this.index].innerHTML=arr1[this.index];
 						inputText[this.index].style.borderColor="red";
 						oP[this.index].style.color="red";
+						e=0;
 					}
 					else {
 						var rephone=new RegExp('^[1]{1}[0-9]{10}$');
@@ -257,11 +270,13 @@
 							oP[this.index].innerHTML=arr2[this.index];
 							inputText[this.index].style.borderColor="red";
 							oP[this.index].style.color="red";
+							e=0;
 						}
 						else {
 							oP[this.index].innerHTML=arr3[this.index];
 							inputText[this.index].style.borderColor="lightgreen";
 							oP[this.index].style.color="lightgreen";
+							e=1;
 						}
 					}
 				}
@@ -271,7 +286,12 @@
 	} //遍历input
 	//提交按钮
 	btn.onclick=function() {
-		alert("提交成功！");
+		if(a&&b&&c&&d&&e){
+			alert("提交成功!");
+		}
+		else{
+			alert("提交失败！请检查输入内容是否规范");
+		}
 	}
 }</script>
 	</body>
